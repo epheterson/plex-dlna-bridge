@@ -57,6 +57,8 @@ Configured through [pydantic settings](https://pydantic-docs.helpmanual.io/usage
 | `HOST_IP` | IP of this host. Plex clients use `http://HOST_IP:HTTP_PORT` to reach your renderers | auto |
 | `ALIASES` | Preferred renderer names, as `uuid:name1,ip:name2,origin_name:name3` | empty |
 | `LOCATION_URL` | Description URL of a renderer. Setting this disables auto discovery | none |
+| `ONLY_DEVICES` | Register only these renderers, as `uuid,name,ip` — matched the same way as `ALIASES`. Empty means all | empty |
+| `IGNORE_DEVICES` | Never register these renderers, same format. Useful when your network has speakers you don't want cluttering Plex's player list | empty |
 | `FORCE_HTTP` | Rewrite Plex's `https://….plex.direct` address to a plain `http://` LAN address, for renderers that cannot fetch HTTPS. Note this applies to all traffic to the Plex server, so the Plex token is sent in cleartext on your LAN, and it will not work if your server requires secure connections | `false` |
 | `PLEX_LAN_ADDRESS` | Your Plex server's LAN address, e.g. `192.0.2.10`. Used instead of the plex.direct hostname when `FORCE_HTTP` is on. Needed when the controller reaches Plex over IPv6, since an IPv6 plex.direct name cannot be rewritten on its own | none |
 | `CONFIG_PATH` | Where persistent data is stored | `/config` |
