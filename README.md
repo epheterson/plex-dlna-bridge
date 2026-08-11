@@ -4,7 +4,9 @@ Cast Plex and Plexamp to any UPnP/DLNA renderer — an amplifier, a network stre
 
 Your renderer shows up in Plex's `Select Player` window and Plexamp's output list, then fetches the original file straight from your Plex server — so a 24-bit FLAC arrives untouched. AirPlay caps at 16/44.1 and Chromecast re-encodes; this doesn't.
 
-Based on [songchenwen/plexdlnaplayer](https://github.com/songchenwen/plexdlnaplayer), which has had no commits since 2021. These changes are also open upstream as [#25](https://github.com/songchenwen/plexdlnaplayer/pull/25).
+> **Use [songchenwen/plexdlnaplayer](https://github.com/songchenwen/plexdlnaplayer) instead.**
+>
+> This existed because that project looked unmaintained. It isn't — [#25](https://github.com/songchenwen/plexdlnaplayer/pull/25) was merged, the official images are publishing again, and the rest of what's here is offered in [#26](https://github.com/songchenwen/plexdlnaplayer/pull/26). This repository will be archived once that lands.
 
 ## What's different
 
