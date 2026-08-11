@@ -22,5 +22,11 @@ Some renderers cannot fetch HTTPS. At least one does not merely fail on Plex's `
 **Build.**
 Pinned the base image to `python:3.10`. With an unpinned `python:3` the pinned cchardet/httptools/uvloop wheels no longer build, so the image no longer built from source.
 
+**Devices that nest services in a `deviceList`.**
+Denon HEOS and similar devices put their services under `deviceList/device/serviceList` rather than a top-level `serviceList`, so they were rejected as not being renderers. Support for this is @garbled1's work from upstream [#3](https://github.com/songchenwen/plexdlnaplayer/pull/3), open since 2021 and cherry-picked here with authorship intact. Hardened on top of it: xmltodict returns a dict for a single occurrence and a list for several, so a device nesting exactly one entry iterated the keys of a string and was skipped with `string indices must be integers`.
+
+**Compose file.**
+Added, following @tschechniker's in upstream [#14](https://github.com/songchenwen/plexdlnaplayer/pull/14). The `modelDescription` and base-image fixes from that PR arrived here independently; the credit for finding the whitespace case is his.
+
 **Tests.**
 Added unit tests for the service-version helpers.

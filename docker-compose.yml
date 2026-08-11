@@ -1,0 +1,12 @@
+services:
+  plex-dlna-bridge:
+    image: ghcr.io/epheterson/plex-dlna-bridge
+    container_name: plex-dlna-bridge
+    # Required: UPnP discovery and Plex GDM both need UDP broadcast.
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+    # environment:
+    #   - FORCE_HTTP=true              # renderers that cannot fetch https
+    #   - PLEX_LAN_ADDRESS=192.0.2.10  # needed when Plex is reached over IPv6
